@@ -9,7 +9,7 @@ const expressLayouts = require("express-ejs-layouts");
 app.use(express.static("public"));
 app.use(expressLayouts);
 app.set('view engine', 'ejs');
-
+app.set('views','./src/views');
 
 const NAMESPACES = [
     {
@@ -51,7 +51,7 @@ app.get("*", async (req,res)=>{
             LAYOUT = LAYOUTS.find((el) => el.name === "Template_1").url;
         }
 
-
+        console.log(LAYOUT)
         res.render('index', {layout:LAYOUT});
     }
 });
