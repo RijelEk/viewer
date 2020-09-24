@@ -1,4 +1,3 @@
-
 const webpack = require("webpack");
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require("webpack-hot-middleware");
@@ -9,8 +8,6 @@ const express = require('express');
 const app = express(),compiler = webpack(config)
 const server = require('http').Server(app);
 const path = require('path');
-const ejs = require('ejs');
-const expressLayouts = require("express-ejs-layouts");
 
 app.use(webpackDevMiddleware(compiler, {
     publicPath: config.output.publicPath
@@ -18,10 +15,8 @@ app.use(webpackDevMiddleware(compiler, {
 
 app.use(webpackHotMiddleware(compiler))
 
-app.use(express.static("public"));
-app.use(expressLayouts);
-app.set('view engine', 'ejs');
-app.set('views','./src/views');
+app.use(express.static(path.join(__dirname, 'public')))
+
 
 const NAMESPACES = [
     {
@@ -40,9 +35,10 @@ const NAMESPACES = [
         template:"Template_1"
     }
 ];
+
 const LAYOUTS = [
-    {name:"Template_1", url:"./templates/template_1.ejs"},
-    {name:"Template_2", url:"./templates/template_2.ejs"},
+    {name:"Template_1", url:"/template__1.html"},
+    {name:"Template_2", url:"/template__2.html"},
 ];
 
 app.get("*",  (req,res)=>{
@@ -63,8 +59,8 @@ app.get("*",  (req,res)=>{
             LAYOUT = LAYOUTS.find((el) => el.name === "Template_1").url;
         }
 
-        console.log(LAYOUT)
-        res.render('index', {layout:LAYOUT});
+
+        res.sendFile(path.join(__dirname + LAYOUT));
     }
 });
 

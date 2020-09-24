@@ -9,7 +9,7 @@
     "server": "nodemon ./src/server.js",
     "start": "nodemon ./dist/server.js",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build",
-    "startJs":"webpack-dev-server --mode development"
+    "startJs": "webpack -p && webpack-dev-server --mode development"
   },
   "engines": {
     "node": "8.11.2"
@@ -29,6 +29,8 @@
     "cookie-parser": "^1.4.4",
     "cors": "^2.8.5",
     "ejs": "^3.1.5",
+    "ejs-render-loader": "^1.0.0",
+    "ejs-webpack-loader": "^2.2.2",
     "event-stream": "^4.0.1",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",

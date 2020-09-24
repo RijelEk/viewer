@@ -7,6 +7,18 @@ const webpack = require('webpack')
 
 const entryPath  = './public/js/index.ts';
 
+let htmlPageNames = ["template__1", 'template__2']; //tempaltes
+let multipleHtmlPlugins = htmlPageNames.map(name => {
+  return new HtmlWebpackPlugin({
+    template: `./src/public/${name}.html`, 
+    filename: `${name}.html`,
+    chunks: [`main`], 
+    inject:true
+  })
+});
+
+
+
 module.exports = {
     entry: ['babel-polyfill', entryPath],
     output: {
@@ -31,13 +43,14 @@ module.exports = {
       }
     },
     plugins: [
-        new HtmlWebpackPlugin({
-            filename: 'index.html',
-            template: './public/index.html',
-            favicon: "./public/images/favicon.png"
-        }),
-        new webpack.HotModuleReplacementPlugin(),
-    ],
+      new HtmlWebpackPlugin({
+        template: `./src/public/template__1.html`, 
+        filename: `template__1.html`,
+        chunks: [`main`], 
+        inject:true
+      }),
+      new webpack.HotModuleReplacementPlugin(),
+    ].concat(multipleHtmlPlugins),
     resolve: {
         extensions: ['.js', '.jsx', '.ts', '.tsx', '.css', "scss"],
         alias: {
@@ -46,6 +59,7 @@ module.exports = {
     },
     module: {
         rules: [
+  { test: /\.ejs$/, loader: "ejs-render-loader" }, 
           {
             test: /\.(html)$/,
             use: ['html-loader']

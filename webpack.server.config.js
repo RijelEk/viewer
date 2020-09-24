@@ -7,7 +7,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, 'dist'),
-    publicPath: '/',
+    publicPath: '/public',
     filename: '[name].js'
   },
   target: 'node',
@@ -26,7 +26,18 @@ module.exports = {
         use: {
           loader: "babel-loader"
         }
-      }
+      },
+      {
+        test: /\.ejs$/,
+        use: [
+            {
+              loader: "ejs-webpack-loader",
+              options: {
+                htmlmin: true
+              }
+            }
+        ]
+    },
     ]
   }
 }
