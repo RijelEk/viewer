@@ -90,10 +90,11 @@
 /*!***********************!*\
   !*** ./src/server.js ***!
   \***********************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }\n\nfunction _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"next\", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"throw\", err); } _next(undefined); }); }; }\n\nvar http = __webpack_require__(/*! http */ \"http\");\n\nvar express = __webpack_require__(/*! express */ \"express\");\n\nvar app = express();\n\nvar server = __webpack_require__(/*! http */ \"http\").Server(app);\n\nvar path = __webpack_require__(/*! path */ \"path\");\n\nvar ejs = __webpack_require__(/*! ejs */ \"ejs\");\n\nvar expressLayouts = __webpack_require__(/*! express-ejs-layouts */ \"express-ejs-layouts\");\n\napp.use(express[\"static\"](\"public\"));\napp.use(expressLayouts);\napp.set('view engine', 'ejs');\napp.set('views', './src/views');\nvar NAMESPACES = [{\n  id: \"xuver\",\n  name: \"xuver\",\n  template: \"Template_1\"\n}, {\n  id: \"summerwood\",\n  name: \"Summerwood\",\n  template: \"Template_2\"\n}, {\n  id: \"randomcompany\",\n  name: \"Random Inc.\",\n  template: \"Template_1\"\n}];\nvar LAYOUTS = [{\n  name: \"Template_1\",\n  url: \"./templates/template_1.ejs\"\n}, {\n  name: \"Template_2\",\n  url: \"./templates/template_2.ejs\"\n}];\napp.get(\"*\", /*#__PURE__*/function () {\n  var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(req, res) {\n    var LAYOUT, URL, URL__ARR, USER, CURRENT__NAMESPACE;\n    return regeneratorRuntime.wrap(function _callee$(_context) {\n      while (1) {\n        switch (_context.prev = _context.next) {\n          case 0:\n            if (!req.originalUrl.includes('favicon.ico')) {\n              LAYOUT = null;\n              URL = req.originalUrl;\n              URL__ARR = URL.split(\"/\");\n              USER = URL__ARR[1];\n\n              if (typeof USER !== \"undefined\" && USER != \"\") {\n                CURRENT__NAMESPACE = NAMESPACES.find(function (el) {\n                  return el.id === USER;\n                });\n\n                if (CURRENT__NAMESPACE && CURRENT__NAMESPACE.template) {\n                  LAYOUT = LAYOUTS.find(function (el) {\n                    return el.name === CURRENT__NAMESPACE.template;\n                  }).url;\n                } else {\n                  LAYOUT = LAYOUTS.find(function (el) {\n                    return el.name === \"Template_1\";\n                  }).url;\n                }\n              } else {\n                LAYOUT = LAYOUTS.find(function (el) {\n                  return el.name === \"Template_1\";\n                }).url;\n              }\n\n              console.log(LAYOUT);\n              res.render('index', {\n                layout: LAYOUT\n              });\n            }\n\n          case 1:\n          case \"end\":\n            return _context.stop();\n        }\n      }\n    }, _callee);\n  }));\n\n  return function (_x, _x2) {\n    return _ref.apply(this, arguments);\n  };\n}()); // /* Connect databse */\n\n__webpack_require__(/*! ./startup/db */ \"./src/startup/db.js\")();\n\nvar port = process.env.PORT || 3007;\nserver.listen(port, function () {\n  return console.log(\"Listening on port \".concat(port, \"...\"));\n});\n\n//# sourceURL=webpack:///./src/server.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var webpack__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! webpack */ \"webpack\");\n/* harmony import */ var webpack__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(webpack__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var webpack_dev_middleware__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! webpack-dev-middleware */ \"webpack-dev-middleware\");\n/* harmony import */ var webpack_dev_middleware__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(webpack_dev_middleware__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var webpack_hot_middleware__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! webpack-hot-middleware */ \"webpack-hot-middleware\");\n/* harmony import */ var webpack_hot_middleware__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(webpack_hot_middleware__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _webpack_config_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../webpack.config.js */ \"./webpack.config.js\");\n/* harmony import */ var _webpack_config_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_webpack_config_js__WEBPACK_IMPORTED_MODULE_3__);\n\n\n\n\n\nvar http = __webpack_require__(/*! http */ \"http\");\n\nvar express = __webpack_require__(/*! express */ \"express\");\n\nvar app = express(),\n    compiler = webpack__WEBPACK_IMPORTED_MODULE_0___default()(_webpack_config_js__WEBPACK_IMPORTED_MODULE_3___default.a);\n\nvar server = __webpack_require__(/*! http */ \"http\").Server(app);\n\nvar path = __webpack_require__(/*! path */ \"path\");\n\nvar ejs = __webpack_require__(/*! ejs */ \"ejs\");\n\nvar expressLayouts = __webpack_require__(/*! express-ejs-layouts */ \"express-ejs-layouts\");\n\napp.use(webpack_dev_middleware__WEBPACK_IMPORTED_MODULE_1___default()(compiler, {\n  publicPath: _webpack_config_js__WEBPACK_IMPORTED_MODULE_3___default.a.output.publicPath\n}));\napp.use(webpack_hot_middleware__WEBPACK_IMPORTED_MODULE_2___default()(compiler));\napp.use(express[\"static\"](\"public\"));\napp.use(expressLayouts);\napp.set('view engine', 'ejs');\napp.set('views', './src/views');\nvar NAMESPACES = [{\n  id: \"xuver\",\n  name: \"xuver\",\n  template: \"Template_1\"\n}, {\n  id: \"summerwood\",\n  name: \"Summerwood\",\n  template: \"Template_2\"\n}, {\n  id: \"randomcompany\",\n  name: \"Random Inc.\",\n  template: \"Template_1\"\n}];\nvar LAYOUTS = [{\n  name: \"Template_1\",\n  url: \"./templates/template_1.ejs\"\n}, {\n  name: \"Template_2\",\n  url: \"./templates/template_2.ejs\"\n}];\napp.get(\"*\", function (req, res) {\n  if (!req.originalUrl.includes('favicon.ico')) {\n    var LAYOUT = null;\n    var URL = req.originalUrl;\n    var URL__ARR = URL.split(\"/\");\n    var USER = URL__ARR[1];\n\n    if (typeof USER !== \"undefined\" && USER != \"\") {\n      var CURRENT__NAMESPACE = NAMESPACES.find(function (el) {\n        return el.id === USER;\n      });\n\n      if (CURRENT__NAMESPACE && CURRENT__NAMESPACE.template) {\n        LAYOUT = LAYOUTS.find(function (el) {\n          return el.name === CURRENT__NAMESPACE.template;\n        }).url;\n      } else {\n        LAYOUT = LAYOUTS.find(function (el) {\n          return el.name === \"Template_1\";\n        }).url;\n      }\n    } else {\n      LAYOUT = LAYOUTS.find(function (el) {\n        return el.name === \"Template_1\";\n      }).url;\n    }\n\n    console.log(LAYOUT);\n    res.render('index', {\n      layout: LAYOUT\n    });\n  }\n}); // /* Connect databse */\n\n__webpack_require__(/*! ./startup/db */ \"./src/startup/db.js\")();\n\nvar port = process.env.PORT || 3007;\nserver.listen(port, function () {\n  return console.log(\"Listening on port \".concat(port, \"...\"));\n});\n\n//# sourceURL=webpack:///./src/server.js?");
 
 /***/ }),
 
@@ -105,6 +106,17 @@ eval("function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg)
 /***/ (function(module, exports, __webpack_require__) {
 
 eval("var mongoose = __webpack_require__(/*! mongoose */ \"mongoose\");\n\nmodule.exports = function () {\n  console.log(\"Connecting to MongoDB...\");\n  mongoose.set('useCreateIndex', true);\n  mongoose.connect('mongodb://mongo:27017/xuver', {\n    useNewUrlParser: true,\n    useFindAndModify: false,\n    useUnifiedTopology: true\n  }).then(function () {\n    return console.log('Connected to MongoDB...');\n  })[\"catch\"](function (err) {\n    return console.error('Could not connect to MongoDB...');\n  });\n};\n\n//# sourceURL=webpack:///./src/startup/db.js?");
+
+/***/ }),
+
+/***/ "./webpack.config.js":
+/*!***************************!*\
+  !*** ./webpack.config.js ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var HtmlWebpackPlugin = __webpack_require__(/*! html-webpack-plugin */ \"html-webpack-plugin\");\n\nvar fs = __webpack_require__(/*! fs */ \"fs\");\n\nvar path = __webpack_require__(/*! path */ \"path\");\n\nvar webpack = __webpack_require__(/*! webpack */ \"webpack\");\n/* (!) To run in docker localy uncomment host  */\n\n\nvar entryPath = './public/js/index.ts';\nmodule.exports = {\n  entry: ['babel-polyfill', entryPath],\n  output: {\n    path: path.resolve(__dirname, 'dist'),\n    filename: 'js/bundle.js'\n  },\n  devtool: \"source-map\",\n  mode: \"development\",\n  devServer: {\n    contentBase: path.join(__dirname, \"dist\"),\n    // host: \"0.0.0.0\",\n    allowedHosts: [\"viewer.xu.local\"],\n    \"public\": \"viewer.xu.local\",\n    port: 443,\n    https: {\n      key: fs.readFileSync(\"https/key\"),\n      cert: fs.readFileSync(\"https/crt\")\n    },\n    historyApiFallback: true,\n    watchOptions: {\n      ignored: /node_modules/\n    }\n  },\n  plugins: [new HtmlWebpackPlugin({\n    filename: 'index.html',\n    template: './public/index.html',\n    favicon: \"./public/images/favicon.png\"\n  }), new webpack.HotModuleReplacementPlugin()],\n  resolve: {\n    extensions: ['.js', '.jsx', '.ts', '.tsx', '.css', \"scss\"],\n    alias: {\n      \"@\": path.resolve(__dirname, \"public/\") // for IDE only, the main alias is in .babelrc\n\n    }\n  },\n  module: {\n    rules: [{\n      test: /\\.(html)$/,\n      use: ['html-loader']\n    }, {\n      test: /\\.ts(x?)$/,\n      exclude: /node_modules/,\n      use: [{\n        loader: \"ts-loader\"\n      }]\n    }, {\n      test: /\\.js$/,\n      exclude: /(node_modules|bower_components)/,\n      use: [{\n        loader: \"babel-loader\",\n        options: {\n          cacheDirectory: \".cache/babel\"\n        }\n      }]\n    }, {\n      test: /\\.scss$/,\n      use: [{\n        loader: \"style-loader\"\n      }, {\n        loader: \"css-loader\"\n      }, {\n        loader: \"sass-loader\"\n      }]\n    }, {\n      test: /\\.woff2?(\\?v=[0-9]\\.[0-9]\\.[0-9])?$/,\n      loader: \"url-loader\"\n    }, {\n      test: /\\.(ttf|eot|svg)(\\?[\\s\\S]+)?$/,\n      loader: \"file-loader\"\n    }, {\n      test: /\\.(jpg|jpeg|png|gif|pdf|ico|mp4|obj)$/,\n      loader: \"file-loader\",\n      options: {\n        outputPath: \"img/\",\n        name: \"[name][hash].[ext]\"\n      }\n    }]\n  }\n};\n\n//# sourceURL=webpack:///./webpack.config.js?");
 
 /***/ }),
 
@@ -141,6 +153,28 @@ eval("module.exports = require(\"express-ejs-layouts\");\n\n//# sourceURL=webpac
 
 /***/ }),
 
+/***/ "fs":
+/*!*********************!*\
+  !*** external "fs" ***!
+  \*********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"fs\");\n\n//# sourceURL=webpack:///external_%22fs%22?");
+
+/***/ }),
+
+/***/ "html-webpack-plugin":
+/*!**************************************!*\
+  !*** external "html-webpack-plugin" ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"html-webpack-plugin\");\n\n//# sourceURL=webpack:///external_%22html-webpack-plugin%22?");
+
+/***/ }),
+
 /***/ "http":
 /*!***********************!*\
   !*** external "http" ***!
@@ -171,6 +205,39 @@ eval("module.exports = require(\"mongoose\");\n\n//# sourceURL=webpack:///extern
 /***/ (function(module, exports) {
 
 eval("module.exports = require(\"path\");\n\n//# sourceURL=webpack:///external_%22path%22?");
+
+/***/ }),
+
+/***/ "webpack":
+/*!**************************!*\
+  !*** external "webpack" ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"webpack\");\n\n//# sourceURL=webpack:///external_%22webpack%22?");
+
+/***/ }),
+
+/***/ "webpack-dev-middleware":
+/*!*****************************************!*\
+  !*** external "webpack-dev-middleware" ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"webpack-dev-middleware\");\n\n//# sourceURL=webpack:///external_%22webpack-dev-middleware%22?");
+
+/***/ }),
+
+/***/ "webpack-hot-middleware":
+/*!*****************************************!*\
+  !*** external "webpack-hot-middleware" ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"webpack-hot-middleware\");\n\n//# sourceURL=webpack:///external_%22webpack-hot-middleware%22?");
 
 /***/ })
 

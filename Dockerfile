@@ -1,6 +1,6 @@
 FROM node:alpine
 
-WORKDIR /usr/src/game
+WORKDIR /usr/src
 
 COPY ./package.json ./
 

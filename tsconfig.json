@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+      "outDir": "./dist/",
+      "sourceMap": true,
+      "noImplicitAny": true,
+      "module": "commonjs",
+      "target": "es6",
+      "allowJs": true,
+      "esModuleInterop": true,
+      "noImplicitThis": true,
+      "skipLibCheck": true,
+      "baseUrl": ".",
+      "jsx": "preserve",
+      "paths": {
+        "@/*": ["src/*"]
+      }
+    },
+    "include": ["./public/**/*", "./public/custom.d.ts"]
+  }
+  
