@@ -2,9 +2,10 @@ const http = require("http");
 const express = require('express');
 const app = express();
 const server = require('http').Server(app);
+var path = require('path');
 
 app.get("/", (_,res)=>{
-    res.send("Viewer app");
+    res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
 // /* Connect databse */
