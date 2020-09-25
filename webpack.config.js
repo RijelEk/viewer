@@ -23,7 +23,8 @@ module.exports = {
     entry: ['babel-polyfill', entryPath],
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'js/bundle.js'
+        filename: 'js/bundle.js',
+        publicPath: '/dist/'
     },
     devtool: "source-map",
     mode: "development",
