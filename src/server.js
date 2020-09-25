@@ -5,7 +5,8 @@ const config = require("../webpack.config.js");
 
 const http = require("http");
 const express = require('express');
-const app = express(),compiler = webpack(config)
+const app = express(),
+compiler = webpack(config)
 const server = require('http').Server(app);
 const path = require('path');
 const templater = require("./utilities/router");
@@ -24,5 +25,6 @@ app.get(["/:id", "/:id/:id", "*"], (req,res)=>{
 // /* Connect databse */
 // require('./startup/db')();
 
-const port = process.env.PORT || 8080;
-server.listen(port, () => console.log(`Listening on port ${port}...`));
+const port = process.env.PORT || 80;
+
+server.listen(port,  () => console.log(`Listening on port ${port}...`));
