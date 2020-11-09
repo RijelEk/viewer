@@ -1,9 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
-  <g id="Group_7845" data-name="Group 7845" transform="translate(-1576 -722)">
-    <g id="Ellipse_64" data-name="Ellipse 64" transform="translate(1576 722)" fill="none" stroke="#7a9c49" stroke-width="2">
-      <circle cx="14" cy="14" r="14" stroke="none"/>
-      <circle cx="14" cy="14" r="13" fill="none"/>
-    </g>
-    <text id="i" transform="translate(1588 741)" fill="#7a9c49" font-size="18" font-family="Rokkitt-Bold, Rokkitt" font-weight="700"><tspan x="0" y="0">i</tspan></text>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28"><g id="Group_7845" data-name="Group 7845" transform="translate(-1576 -722)"><g id="Ellipse_64" fill="none" stroke="#7a9c49" stroke-width="2" data-name="Ellipse 64" transform="translate(1576 722)"><circle cx="14" cy="14" r="14" stroke="none"/><circle cx="14" cy="14" r="13" fill="none"/></g><text id="i" fill="#7a9c49" font-family="Rokkitt-Bold, Rokkitt" font-size="18" font-weight="700" transform="translate(1588 741)"><tspan x="0" y="0">i</tspan></text></g></svg>

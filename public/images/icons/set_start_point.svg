@@ -1,7 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="25" height="32" viewBox="0 0 25 32">
-  <g id="Group_7839" data-name="Group 7839" transform="translate(-15.003 -6.036)">
-    <rect id="Rectangle_371" data-name="Rectangle 371" width="2" height="30" rx="1" transform="translate(16.003 8.036)" fill="#b7b7b7"/>
-    <path id="Path_35058" data-name="Path 35058" d="M40,24.036H18v-14H40l-6,7Z" fill="#b7b7b7"/>
-    <circle id="Ellipse_63" data-name="Ellipse 63" cx="2" cy="2" r="2" transform="translate(15.003 6.036)" fill="#b7b7b7"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="32" viewBox="0 0 25 32"><g id="Group_7839" data-name="Group 7839" transform="translate(-15.003 -6.036)"><rect id="Rectangle_371" width="2" height="30" fill="#b7b7b7" data-name="Rectangle 371" rx="1" transform="translate(16.003 8.036)"/><path id="Path_35058" fill="#b7b7b7" d="M40,24.036H18v-14H40l-6,7Z" data-name="Path 35058"/><circle id="Ellipse_63" cx="2" cy="2" r="2" fill="#b7b7b7" data-name="Ellipse 63" transform="translate(15.003 6.036)"/></g></svg>
